@@ -34,10 +34,12 @@
    lib.getBooks().forEach((book,index) =>{
     renderLibEl.innerHTML += `
     <li class="p-3  rounded bg-orange-100 flex  justify-between">
- <div class="${book.isRead()?'line-through':''}">${book.title} by ${book.author}</div>
- <div>
-     <button class="px-2 py-1 bg-green-600 text-sm rounded text-white  " onclick="markBookasRead(${index})">Mark as Read</button>
-     <button class="px-2 py-1 bg-red-600 text-sm rounded text-white" onclick="removeBook(${index})">Remove</button>
+    <div flex flex-col  >
+ <div class="${book.isRead()?'line-through':''}">${book.getTitle()} by ${book.getAuthor()}</div>
+ <div class="mt-3 space-x-2 space-y-2 ">
+     <button class="text-xs  px-2 py-1 bg-green-600 sm:text-sm rounded text-white w-full sm:w-25" onclick="markBookasRead(${index})">Mark as Read</button>
+     <button class="text-xs  px-2 py-1 bg-red-600 sm:text-sm rounded text-white w-full sm:w-25" onclick="removeBook(${index})">Remove</button>
+ </div>
  </div>
  </li>
 
